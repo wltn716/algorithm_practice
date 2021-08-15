@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+
+/baekjoon/template.cpp
