@@ -1,6 +1,7 @@
 // 문제: https://www.acmicpc.net/problem/
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 int main() {
