@@ -11,7 +11,7 @@ bool compare(pair<int, string> p1, pair<int, string> p2) {
 
 int main() {
     int n;
-    vector<pair<int, string>> v;
+    vector<pair<int,string> > v;
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++){
