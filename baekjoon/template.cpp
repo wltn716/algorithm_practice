@@ -5,6 +5,7 @@
 #include <string>
 #include <cstring>
 #include <vector>
+#include <stack>
 #define all(v) v.begin(), v.end()
 
 using namespace std;
@@ -14,11 +15,12 @@ typedef long long ll;
 int main() {
     ios_base::sync_with_stdio(false); cin.tie(NULL);
 
-    vector<int> a(3,0);
-    vector<int> b = a;
-    b[0] = 1;
+    
+    vector<int> vec;
+    vec.push_back(1);
+    vec.push_back(3);
 
-    cout << a[0] << " " << b[0] << "\n";
+    cout << *(vec.end()-1) << "\n";
 
     return 0;
 } 
