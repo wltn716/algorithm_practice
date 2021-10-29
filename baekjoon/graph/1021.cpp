@@ -41,6 +41,7 @@ void solution() {
             visit[x][y] = ++grp;
         }
 
+        // 현재 탐색중인 그래프에 포함되어있지 않은 경우
         if(visit[x][y] != grp) continue;
         
 
