@@ -13,20 +13,7 @@ vector<vector<int>> ground;
 vector<vector<int>> visit;
 deque<pair<int, int>> dq;
 
-bool searchable (int x, int y) {
-    if(x >= 0 && x < n && y >= 0 && y < m) {
-        if(visit[x][y] == 0 && ground[x][y] == 1) {
-            return true;
-        }
-
-        return false;
-    }
-
-    return false;
-}
-
 void solution() {
-    int ans = 0;
     int grp = 0;
 
     while(!dq.empty()) {
@@ -36,12 +23,12 @@ void solution() {
         int x = p.first;
         int y = p.second;
 
+        // 그래프의 시작일 경우
         if(visit[x][y] == 0) {
-            ans++;
             visit[x][y] = ++grp;
         }
 
-        // 현재 탐색중인 그래프에 포함되어있지 않은 경우
+        // 이미 다른 그래프를 통해 탐색된 경우
         if(visit[x][y] != grp) continue;
         
 
@@ -49,15 +36,16 @@ void solution() {
             int nx = x + dx[i];
             int ny = y + dy[i];
 
-            if(searchable(nx, ny)) {
-                visit[nx][ny] = visit[x][y];
-                dq.push_front({nx, ny});
+            if(nx >= 0 && nx < n && ny >= 0 && ny < m) {
+                if(visit[nx][ny] == 0 && ground[nx][ny] == 1) {
+                    visit[nx][ny] = visit[x][y];
+                    dq.push_front({nx, ny});
+                }
             }
         }
-
     }
 
-    cout << ans << "\n";
+    cout << grp << "\n";
 }
 
 int main() {

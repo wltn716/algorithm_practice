@@ -1,5 +1,4 @@
-// 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-// 문제: https://www.acmicpc.net/problem/12100
+// https://leetcode.com/problems/clone-graph/
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -28,8 +27,6 @@ int main() {
     //     }
     //     cout << "\n";
     // }
-
-    
 
     return 0;
 } 
