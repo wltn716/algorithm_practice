@@ -43,6 +43,8 @@ void bf(int cnt, vector<pair<int, int>> live) {
         if(!live_chiken[i]) {
             live_chiken[i] = true;
             live.push_back(chikens[i]);
+            
+            // 재귀 호출
             bf(cnt + 1, live);
 
             live_chiken[i] = false;
@@ -67,11 +69,6 @@ int main() {
     }
 
     live_chiken.assign(chikens.size(), false);
-    
-    if(chikens.size() <= m) {
-        cout << get_chk_dis(chikens) << "\n";
-        return 0;
-    }
 
     bf(0, vector<pair<int, int>>());
 
